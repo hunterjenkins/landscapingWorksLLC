@@ -1,20 +1,338 @@
-<ion-header [translucent]="true">
+<link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
+
+<div *ngIf="innerWidth > 700">
+<ion-header class="bg">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Landscaping Works LLC
     </ion-title>
+    <div style="padding-left: 5px; padding-right: 5px;" slot="end">
+      <button (click)="scroll(gallery)" mat-button> Gallery </button>
+    </div>
+    <div style="padding-left: 5px; padding-right: 5px;" slot="end">
+      <button (click)="scroll(testimonials)" mat-button> Testimonials </button>
+
+
+    </div>
+    <div style="padding-left: 5px; padding-right: 5px;" slot="end">
+      <button (click)="scroll(mission)" mat-button> Mission Statement</button>
+
+
+    </div>
+    <div style="padding-left: 5px; padding-right: 5px;" slot="end">
+      <button (click)="scroll(bid)" style="background-color: #6ab06c; color: white;" mat-raised-button> Request Bid </button>
+    </div>
   </ion-toolbar>
 </ion-header>
+</div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<div *ngIf="innerWidth < 699">
+<ion-header class="bg" style="padding:0px !important;">
+  <ion-toolbar style="padding:0px !important;">
+    <h1 slot="start" style="width: 100%; margin: 0; text-align: center;">
+      Landscaping Works LLC
+    </h1>
+  </ion-toolbar>
+</ion-header>
+</div>
+
+<ion-content class="bg">
+  <div *ngIf="innerWidth > 700" style="background-image: url('/assets/bg.jpg');   background-repeat: no-repeat; background-size: 100% 100%; height: 90vh;">
+    <div style="height: 150px;"> </div>
+    <mat-card style="display: block; margin: auto; background-color: rgba(255,255,255,1.0); width: 70%; padding: 20px; border-radius: 7px;">
+      <img src="/assets/l.jpg" style="width: 50px; display: block; margin: auto;"/>
+      <h1 style="margin: 0px; text-align:center; padding-top: 10px; font-size: 50px; white-space: initial;"> Landscaping Works LLC </h1>
+      <br>
+      <p style="text-align: center; color: #9c9c9c">Grass | Plants | Fences | Concrete | Retaining Walls | More </p>
+      <br>
+      <button (click)="scroll(bid)" style="display: block; margin: auto; background-color: #6ab06c; color: white;" mat-raised-button> Request Bid </button>
+
+    </mat-card>
   </div>
+
+  <div *ngIf="innerWidth < 699" style="background-image: url('/assets/mobileCover.jpg');   background-repeat: no-repeat; background-size: 100% 100%; height: 70vh;">
+    <div style="height: 50px;"> </div>
+    <mat-card style="display: block; margin: auto; background-color: rgba(255,255,255,1.0); width: 90%; padding: 20px; border-radius: 7px;">
+      <img src="/assets/l.jpg" style="width: 50px; display: block; margin: auto;"/>
+      <h1 style="margin: 0px; text-align:center; padding-top: 10px; font-size: 40px;"> Landscaping Works LLC </h1>
+      <br>
+      <p style="text-align: center; color: #9c9c9c">Grass | Plants | Fences | Concrete | Retaining Walls | More </p>
+      <br>
+      <button (click)="scroll(bid)" style="display: block; margin: auto; background-color: #6ab06c; color: white;" mat-raised-button> Request Bid </button>
+
+    </mat-card>
+  </div>
+
+  <div #gallery> </div>
+
+  <div *ngIf="innerWidth > 700" #galleryBig style="padding: 50px">
+    <h1 style="text-align:center; font-family: 'Sen', sans-serif;"> Gallery </h1>
+    <ion-row>
+      <ion-col>
+        <img style="width: 100%;" src="/assets/image1.jpg" />
+      </ion-col>
+      <ion-col>
+        <img style="width: 100%;" src="/assets/image.jpg" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <img style="width: 100%;" src="/assets/image8.jpg" />
+      </ion-col>
+      <ion-col>
+        <img style="width: 100%;" src="/assets/image11.jpg" />
+      </ion-col>
+      <ion-col>
+        <img style="width: 100%;" src="/assets/image5.jpg" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <img style="width: 100%;" src="/assets/image4.jpg" />
+      </ion-col>
+      <ion-col>
+        <img style="width: 100%;" src="/assets/image10.jpg" />
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+  <div *ngIf="innerWidth < 699" #gallery >
+    <h1 style="text-align:center; font-family: 'Sen', sans-serif;"> Gallery </h1>
+    <ion-slides pager="true">
+      <ion-slide>
+        <img style="width: 100%;" src="/assets/image2.jpg" />
+      </ion-slide>
+
+      <ion-slide>
+        <img style="width: 100%;" src="/assets/image5.jpg" />
+      </ion-slide>
+
+      <ion-slide>
+        <img style="width: 100%;" src="/assets/image3.jpg" />
+      </ion-slide>
+
+
+      <ion-slide>
+        <img style="width: 100%;" src="/assets/image4.jpg" />
+      </ion-slide>
+
+      <ion-slide>
+        <img style="width: 100%;" src="/assets/image1.jpg" />
+      </ion-slide>
+
+      <ion-slide>
+        <img style="width: 100%;" src="/assets/image6.jpg" />
+      </ion-slide>
+
+      <ion-slide>
+        <img style="width: 100%;" src="/assets/image7.jpg" />
+      </ion-slide>
+
+
+      <ion-slide>
+        <img style="width: 100%;" src="/assets/image8.jpg" />
+      </ion-slide>
+
+      <ion-slide>
+        <img style="width: 100%;" src="/assets/image11.jpg" />
+      </ion-slide>
+
+
+      <ion-slide>
+        <img style="width: 100%;" src="/assets/image10.jpg" />
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+
+
+  <div #testimonials style="padding: 50px;  background-color: #f2f2f2">
+    <h1 style="text-align:center;"> Testimonials </h1>
+    <br>
+    <p style="text-align: center; padding: 0; margin: 0; padding-bottom: 10px; color: #8a8a8a"> Please reach out to any of our past clients to get a reference </p>
+    <mat-tab-group [selectedIndex]="0">
+      <mat-tab label="Hunter">
+        <img style="width: 500px; display: block; margin: auto; padding-top: 20px;" src="/assets/image10.jpg" />
+        <br>
+
+        <span style="font-size: 40px; ">"</span>
+
+        <p style="margin: 0; padding-left: 50px; padding-right: 50px;">
+          We were so impressed by Antonio and Landscaping Works LLC. They were quick to respond to our call, they arrived on time, they worked very hard and fast, and the quality of their work was extremely high. We will always and forever recommend these guys!
+        </p>
+
+        <span style="font-size: 40px; line-height: 2; float: right;">"</span>
+        <br>
+        <p style="text-align: center; margin: 0; padding-top: 10px;">Hunter</p>
+        <br>
+        <p style="text-align: center; line-height: 0; margin: 0; color: #9c9c9c">hunterbjenkins@gmail.com</p>
+
+      </mat-tab>
+      <mat-tab label="AnneMarie">
+        <img style="width: 500px; display: block; margin: auto; padding-top: 20px;" src="/assets/image3.jpg" />
+        <br>
+
+        <span style="font-size: 40px; ">"</span>
+
+        <p style="margin: 0; padding-left: 50px; padding-right: 50px;">
+Antonio is amazing! Him and his team are reliable, prompt, and hard working! We love the retaining wall he build in our backyard, concrete RV pad and patio he poured, and fencing he installed. Really high quality work! We will always use him and Landscaping Works LLC        </p>
+
+        <span style="font-size: 40px; line-height: 2; float: right;">"</span>
+        <br>
+        <p style="text-align: center; margin: 0; padding-top: 10px;"> AnneMarie </p>
+        <br>
+        <p style="text-align: center; line-height: 0; margin: 0; color: #9c9c9c">annemariesloan@gmail.com</p>
+
+      </mat-tab>
+      <mat-tab label="Tanisia & Jeff">
+        <img style="width: 500px; display: block; margin: auto; padding-top: 20px;" src="/assets/image5.jpg" />
+        <br>
+
+        <span style="font-size: 40px; ">"</span>
+
+        <p style="margin: 0; padding-left: 50px; padding-right: 50px;">
+There is no project too big or too small. Landscaping works was not only was competitive in pricing but also did outstanding work! Antonio is very talented and great to work with. They were always on time, had great communication and treated us like friends!! We highly recommend Landscaping Works LLC
+        </p>
+
+        <span style="font-size: 40px; line-height: 2; float: right;">"</span>
+        <br>
+        <p style="text-align: center; margin: 0; padding-top: 10px;"> Tanisia & Jeff</p>
+        <br>
+        <p style="text-align: center; line-height: 0; margin: 0; color: #9c9c9c">tanisiadavis@gmail.com</p>
+
+      </mat-tab>
+
+
+      <mat-tab label="Jessica & Quincy">
+        <img style="width: 500px; display: block; margin: auto; padding-top: 20px;" src="/assets/jessica.jpg" />
+        <br>
+
+        <span style="font-size: 40px; ">"</span>
+
+        <p style="margin: 0; padding-left: 50px; padding-right: 50px;">
+We had Antonio build a 155 ft long retaining wall for us. It was a big job, but Antonio worked tirelessly to make sure that it was done carefully, efficiently, and correctly. We couldn't be happier with the finished product! He was exactly who we needed to get the job done right!
+        </p>
+
+        <span style="font-size: 40px; line-height: 2; float: right;">"</span>
+        <br>
+        <p style="text-align: center; margin: 0; padding-top: 10px;">Jessica & Quincy</p>
+        <br>
+        <p style="text-align: center; line-height: 0; margin: 0; color: #9c9c9c"></p>
+
+
+      </mat-tab>
+
+
+
+    </mat-tab-group>
+  </div>
+
+  <div #mission> </div>
+
+  <div *ngIf="innerWidth > 700" #missionBig style="padding: 50px; ">
+    <h1 style="text-align:center;"> Mission Statement</h1>
+
+    <ion-row style="padding-top: 50px;">
+      <ion-col style="text-align: center; padding: 15px; ">
+        <ion-icon style="font-size: 50px;" name="construct-outline"></ion-icon>
+        <p style="margin: 0;"> <b> Quality Work</b></p>
+        <br>
+        <p style="margin: 0; "> We take great pride in our work and want you to be proud. We are dedicated to making sure our work is the highest quality. </p>
+      </ion-col>
+      <ion-col style="text-align: center;  padding: 15px;">
+        <ion-icon style="font-size: 50px;" name="alarm-outline"></ion-icon>
+        <p style="margin: 0;"> <b> Timely Manner </b></p>
+        <br>
+        <p style="margin: 0;"> We understand how frustrating it is when a project drags out. Our focus is to accomplish a high quality project as quick as possible. </p>
+
+      </ion-col>
+      <ion-col style="text-align: center;  padding: 15px;">
+        <ion-icon style="font-size: 50px;" name="happy-outline"></ion-icon>
+        <p style="margin: 0;"> <b> Customer Satisfaction</b></p>
+        <br>
+        <p style="margin: 0; "> Our ultimate goal is to make sure each and every customer is completely satisfied with our work. This is our top priority. </p>
+      </ion-col>
+    </ion-row>
+
+    </div>
+
+
+    <div *ngIf="innerWidth < 699" #mission style="padding: 50px; ">
+      <h1 style="text-align:center;"> Mission Statement</h1>
+
+      <ion-row style="padding-top: 50px; text-align: center;">
+        <ion-col>
+        <ion-icon style="font-size: 50px;" name="construct-outline"></ion-icon>
+        <br>
+        <p style="margin: 0;"> <b> Quality Work</b></p>
+        <br>
+        <p style="margin: 0; "> We take great pride in our work and want you to be proud. We are dedicated to making sure our work is the highest quality. </p>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row style="padding-top: 50px; text-align: center;">
+        <ion-col>
+        <ion-icon style="font-size: 50px;" name="alarm-outline"></ion-icon>
+        <br>
+        <p style="margin: 0;"> <b> Timely Manner </b></p>
+        <br>
+        <p style="margin: 0;"> We understand how frustrating it is when a project drags out. Our focus is to accomplish a high quality project as quick as possible. </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="padding-top: 50px; text-align: center;">
+        <ion-col>
+          <ion-icon style="font-size: 50px;" name="happy-outline"></ion-icon>
+          <br>
+          <p style="margin: 0;"> <b> Customer Satisfaction</b></p>
+          <br>
+          <p style="margin: 0; "> Our ultimate goal is to make sure each and every customer is completely satisfied with our work. This is top our priority. </p>
+          </ion-col>
+      </ion-row>
+
+      </div>
+
+<div #bid> </div>
+    <div *ngIf="innerWidth > 700"  style="padding: 50px; background-color: #6ab06c; color:white; text-align: center;">
+      <h1 style="text-align:center; "> Request Bid </h1>
+
+      <p>
+        We are very excited to work with you. Please reach out to us and we'll schedule an appointment.
+      </p>
+      <br>
+      <div style="font-size: 40px;">
+
+      <ion-icon name="call-outline"></ion-icon>
+      <br>
+      (385) 219-5367
+      <br>
+      <br>
+      <ion-icon name="mail-outline"></ion-icon>
+      <br> workslandscaping@gmail.com
+      </div>
+
+      </div>
+
+      <div  *ngIf="innerWidth < 700" style="padding: 50px; background-color: #6ab06c; color:white; text-align: center;">
+        <h1 style="text-align:center; "> Request Bid </h1>
+
+        <p>
+          We are very excited to work with you. Please reach out to us and we'll schedule an appointment.
+        </p>
+        <br>
+        <div style="font-size: 16px;">
+        <ion-icon name="call-outline"></ion-icon>
+        <br>(385) 219-5367
+        <br>
+        <br>
+        <ion-icon name="mail-outline"></ion-icon> <br> workslandscaping@gmail.com
+        </div>
+
+        </div>
+
 </ion-content>
